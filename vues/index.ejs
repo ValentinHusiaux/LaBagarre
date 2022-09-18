@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>LaBagarre</title>
+    
+</head>
+
+<body>
+   
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item"> LaBagarre </li>
+           <li class="nav-item"> Bienvenue bagarreur <%= sessionName %> </li>
+           <li class="nav-item">  <img class="imgMonnaie" src="/monnaie.png" title="Monnaie">  <%= lesBagarreurs.argent %> </li>  
+           <li class="nav-item"> <a href="boutique">  Boutique </a> </li>
+           <li class="nav-item"> <a href="listeBagarreurs">  Listes des bagarreurs </a> </li>
+           <li class="nav-item"> <a href="logout">Déconnexion</a> </li>
+        </ul>
+    </nav>
+
+    <br>
+
+<div style="display: flex;">
+    <div>
+        <ul class="nav-list2" >
+            <li class="nav-item2"> <img class="imgBag" src="https://robohash.org/<%= lesBagarreurs.pseudo %>"> </li>
+            <li class="nav-item2">Pseudo: <%= lesBagarreurs.pseudo %></li>
+            <li class="nav-item2">Niveau: <%= lesBagarreurs.niveau %></li>
+            <li class="nav-item2"> <img clas="imgLogo" src="/epee.png" title="Force"> <%= lesBagarreurs.force %></li>
+            <li class="nav-item2"> <img clas="imgLogo" src="/boubou.png" title="Defense" > <%= lesBagarreurs.defense %> </li>
+            <li class="nav-item2"><img clas="imgLogo" src="/esquive.png" title="Esquive"> <%= lesBagarreurs.esquive %></li>
+            <li class="nav-item2"><img clas="imgLogo" src="/coeur.png" title="Point de vie"  > <%= lesBagarreurs.pv %></li>     
+        </ul>
+     
+
+        <div class="equipement">
+            <img class="corps" src="/body.png" title="corps">
+        </div>
+
+        <div class="posBou">
+            <a class="vendre" href="/retirerBouclier" >  
+            <img class="imgEquipe" src="<%= monBouclier.image %>" title="Nom : <%= monBouclier.nom%>"> 
+            </a>
+        </div>
+
+        <div class="posArme">
+            <a class="vendre" href="/retirerArme" > 
+            <img class="imgEquipe" src="<%= monArme.image %>" title="Nom : <%= monArme.nom%>"> 
+            </a>
+        </div>
+
+        <div class="posTenue">
+            <a class="vendre" href="/retirerTenue" >  
+            <img class="imgEquipe" src="<%= maTenue.image %>" title="Nom : <%= maTenue.nom%> "> 
+        </a>
+        </div>
+
+    </div>
+
+
+    <div style="width: 100%">
+        <div class="vitrine"> Armes
+            <ul class="ul-list"> 
+                <% for( let index=0; index < mesArmes.length; index++ ) { %>   
+                    <li class="li-item"> 
+                        <a class="vendre" href="/Arme/<%= mesArmes[index].id_obj %>"> Equiper </a>
+                        <img class="img" src="<%= mesArmes[index].image %>" title="Nom : <%= mesArmes[index].nom%> - Point d'attaque : <%= mesArmes[index].modAtt %>"> 
+                        <a class="vendre" href="/Vendre/<%= mesArmes[index].id_obj %>"> Vendre </a>
+                    
+                    </li>
+                <% } %>
+            </ul>
+        </div>   
+
+        <div class="vitrine"> Boucliers
+            <ul class="ul-list"> 
+                <% for( let index=0; index < mesBoucliers.length; index++ ) { %>   
+                    <li class="li-item"> 
+                        <a class="vendre" href="/Bouclier/<%= mesBoucliers[index].id_obj %>"> Equiper </a>
+                        <img class="img" src="<%= mesBoucliers[index].image %>" title="Nom : <%= mesBoucliers[index].nom%> - Point de def : <%= mesBoucliers[index].modDef %>"> 
+                        <a class="vendre" href="/Vendre/<%= mesBoucliers[index].id_obj %>" >  Vendre </a>
+                    
+                    </li>
+                <% } %>
+            </ul>
+        </div>   
+
+        <div class="vitrine"> Tenues
+            <ul class="ul-list"> 
+                <% for( let index=0; index < mesTenues.length; index++ ) { %>   
+                    <li class="li-item">
+                        <a class="vendre" href="/Tenue/<%= mesTenues[index].id_obj %>"> Equiper </a>
+                        <img class="img" src="<%= mesTenues[index].image %>" title="Nom : <%= mesTenues[index].nom%> - Point de vie : <%= mesTenues[index].modPV %>"> 
+                        <a class="vendre" href="/Vendre/<%= mesTenues[index].id_obj %>"> Vendre </a>
+                    </li>
+                <% } %>
+            </ul>
+        </div> 
+    </div>
+</div>
+
+</body>
+
+</html>

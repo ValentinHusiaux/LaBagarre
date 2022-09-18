@@ -1,0 +1,71 @@
+body{
+    background-image: url("equipements.jpg");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+.nav-list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 2rem;
+    font-weight: 600; 
+}
+
+nav {
+    background: #FFF;
+}
+
+.nav-item:nth-child(1) {
+    margin: left;
+}
+
+.nav-item:nth-child(2) {
+    margin: auto;
+}
+
+img{
+    width : 150px;
+    height : 150px;
+}
+
+.vitrine {
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+}
+
+.ul-list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.li-item {
+    margin-right: 2rem;
+    font-weight: 600; 
+    background-image: url("mur.jpg");
+    
+}
+
+
+.acheter {
+    text-align: center;
+    font-size: x-large ;
+    color: #FFF;
+}

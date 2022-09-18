@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/boutique.css">
+    <title>LaBagarre</title>
+    
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item"> LaBagarre </li>
+           <li class="nav-item"> Bienvenue bagarreur <%= sessionName %> </li>  
+           <li class="nav-item"> <a href="index"> Profil </a> </li>
+           <li class="nav-item"> <a href="logout">Déconnexion</a> </li>
+        </ul>
+    </nav>
+<br>
+           
+        <div class="vitrine"> Boucliers
+            <ul class="ul-list"> 
+                <% for( let index=0; index < lesBoucliers.length; index++ ) { %>   
+                    <li class="li-item" > 
+                        <a class="acheter" href="/Add/<%= lesBoucliers[index].id_obj %>"> Acheter </a>
+                         <img  class="img" src="<%= lesBoucliers[index].image %>" title="Nom : <%= lesBoucliers[index].nom%> - Defense : <%= lesBoucliers[index].modDef %>"> 
+                        
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="vitrine"> Armes
+            <ul class="ul-list"> 
+                <% for( let index=0; index < lesArmes.length; index++ ) { %>  
+                    <div> 
+                    <li class="li-item">  
+                        <a class="acheter" href="/Add/<%= lesArmes[index].id_obj %>"> Acheter </a>
+                         <img  class="img" src="<%= lesArmes[index].image %>" title="Nom : <%= lesArmes[index].nom%> - Attaque : <%= lesArmes[index].modAtt %>" >
+                        
+                    </li>
+                </div> 
+                <% } %>
+            </ul>
+        </div>   
+
+        <div class="vitrine"> Tenues
+            <ul class="ul-list"> 
+                <% for( let index=0; index < lesTenues.length; index++ ) { %>   
+                    <li class="li-item"> 
+                        <a class="acheter" href="/Add/<%= lesTenues[index].id_obj %>"> Acheter </a>
+                         <img class="img" src="<%= lesTenues[index].image %>" title="Nom : <%= lesTenues[index].nom%> - Point de vie : <%= lesTenues[index].PV %>"> 
+                   
+                    </li>
+                <% } %>
+            </ul>
+        </div>   
+</body>
+
+</html>

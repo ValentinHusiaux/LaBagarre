@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/listeBagarreurs.css">
+    <title>LaBagarre</title>
+    
+</head>
+
+
+<body>
+
+    <nav>
+        <ul class="nav-list2">
+            <li class="nav-item2"> LaBagarre </li>
+           <li class="nav-item2"> Bienvenue bagarreur <%= sessionName %> </li>
+           <li class="nav-item2"> <a href="index"> Profil </a> </li>
+           <li class="nav-item2"> <a href="logout">Déconnexion</a> </li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <% for( let index=0; index < lesBagarreurs.length; index++ ) { %>
+        <ul class="nav-list" >
+            <li class="nav-item"> <img class="imgBag" src="https://robohash.org/<%= lesBagarreurs[index].pseudo %>"> </li>
+            <li class="nav-item">Pseudo: <%= lesBagarreurs[index].pseudo %></li>
+            <li class="nav-item">Niveau: <%= lesBagarreurs[index].niveau %></li>
+            <li class="nav-item"> <img clas="imgLogo" src="/epee.png" title="Force"> <%= lesBagarreurs[index].force %></li>
+            <li class="nav-item"> <img clas="imgLogo" src="/boubou.png" title="Defense" > <%= lesBagarreurs[index].defense %></li>
+            <li class="nav-item"><img clas="imgLogo" src="/esquive.png" title="Esquive"> <%= lesBagarreurs[index].esquive %></li>
+            <li class="nav-item"><img clas="imgLogo" src="/coeur.png" title="Point de vie"  > <%= lesBagarreurs[index].pv %></li>  
+            <li class="nav-item"> <a href="/combat/<%= lesBagarreurs[index].email %>">ATTAQUEEEEEE !</a>  </li>
+        </ul>
+        <br>
+    <% } %>
+
+
+</body>
+
+
+</html>

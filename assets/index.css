@@ -1,0 +1,147 @@
+body{
+    background-image: url("equipements.jpg");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
+.nav-list {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 2rem;
+    font-weight: 600; 
+}
+
+nav {
+    background: #FFF;
+}
+
+.nav-item:nth-child(1) {
+    margin: left;
+}
+
+.nav-item:nth-child(2) {
+    margin: auto;
+}
+
+
+.nav-list2 {
+   
+    display: flex;
+    text-align: center;
+    float: left;
+    background: #FFF;
+    align-items: center;
+    border: solid;
+    margin-left:30px;
+    
+}
+
+.nav-item2 {
+    margin-right: 2rem;
+    font-weight: 600;
+    
+}
+
+.imgBag {
+    width : 150px;
+    height : 150px;
+    
+    }
+
+.imgArme {
+    width : 100px;
+    height : 100px;
+    
+}
+
+
+.corps{
+    width : 450px;
+    height : 450px;
+    display: flex;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+ }
+
+
+
+.vitrine {
+
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+   
+}
+
+.ul-list {
+    
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.li-item {
+    margin-right: 2rem;
+    font-weight: 600; 
+    background-image: url("mur.jpg");
+    
+}
+
+.img{
+    width : 100px;
+    height : 100px;
+}
+
+.bouclier {
+    display: flex;
+    width : 100px;
+    height : 100px;
+}
+
+.posBou {
+    display: flex;
+    position: absolute;
+    top: 37%;
+    left: 29%;
+}
+
+.posArme {
+    display: flex;
+    position: absolute;
+    top: 42%;
+    left: 6%;
+}
+
+.posTenue {
+    display: flex;
+    position: absolute;
+    top: 41.8%;
+    left: 17.8%;
+}
+
+.imgEquipe{
+    width : 150px;
+    height : 150px;
+}
+
+.vendre {
+ font-size: 20px;
+ color: #FFF;
+}
