@@ -44,19 +44,19 @@
 
         <div class="posBou">
             <a class="vendre" href="/retirerBouclier" >  
-            <img class="imgEquipe" src="<%= monBouclier.image %>" title="Nom : <%= monBouclier.nom%>"> 
+            <!-- <img class="imgEquipe" src=" <%= //monBouclier.image %>" title="Nom : <%= //monBouclier.nom%>">  -->
             </a>
         </div>
 
         <div class="posArme">
             <a class="vendre" href="/retirerArme" > 
-            <img class="imgEquipe" src="<%= monArme.image %>" title="Nom : <%= monArme.nom%>"> 
+            <!-- <img class="imgEquipe" src="<%=// monArme.image %>" title="Nom : <%=// monArme.nom%>">  -->
             </a>
         </div>
 
         <div class="posTenue">
             <a class="vendre" href="/retirerTenue" >  
-            <img class="imgEquipe" src="<%= maTenue.image %>" title="Nom : <%= maTenue.nom%> "> 
+            <!-- <img class="imgEquipe" src="<%=// maTenue.image %>" title="Nom : <%= //maTenue.nom%> ">  -->
         </a>
         </div>
 
@@ -68,7 +68,7 @@
             <ul class="ul-list"> 
                 <% for( let index=0; index < mesArmes.length; index++ ) { %>   
                     <li class="li-item"> 
-                        <a class="vendre" href="/Arme/<%= mesArmes[index].id_obj %>"> Equiper </a>
+                        <!-- <a class="vendre" href="/Arme/<%= //mesArmes[index].id_obj %>"> Equiper </a> -->
                         <img class="img" src="<%= mesArmes[index].image %>" title="Nom : <%= mesArmes[index].nom%> - Point d'attaque : <%= mesArmes[index].modAtt %>"> 
                         <a class="vendre" href="/Vendre/<%= mesArmes[index].id_obj %>"> Vendre </a>
                     
@@ -81,7 +81,7 @@
             <ul class="ul-list"> 
                 <% for( let index=0; index < mesBoucliers.length; index++ ) { %>   
                     <li class="li-item"> 
-                        <a class="vendre" href="/Bouclier/<%= mesBoucliers[index].id_obj %>"> Equiper </a>
+                        <!-- <a class="vendre" href="/Bouclier/<%= // mesBoucliers[index].id_obj %>"> Equiper </a> -->
                         <img class="img" src="<%= mesBoucliers[index].image %>" title="Nom : <%= mesBoucliers[index].nom%> - Point de def : <%= mesBoucliers[index].modDef %>"> 
                         <a class="vendre" href="/Vendre/<%= mesBoucliers[index].id_obj %>" >  Vendre </a>
                     
@@ -94,7 +94,7 @@
             <ul class="ul-list"> 
                 <% for( let index=0; index < mesTenues.length; index++ ) { %>   
                     <li class="li-item">
-                        <a class="vendre" href="/Tenue/<%= mesTenues[index].id_obj %>"> Equiper </a>
+                        <!-- <a class="vendre" href="/Tenue/<%= // mesTenues[index].id_obj %>"> Equiper </a> -->
                         <img class="img" src="<%= mesTenues[index].image %>" title="Nom : <%= mesTenues[index].nom%> - Point de vie : <%= mesTenues[index].modPV %>"> 
                         <a class="vendre" href="/Vendre/<%= mesTenues[index].id_obj %>"> Vendre </a>
                     </li>

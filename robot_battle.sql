@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 18 sep. 2022 à 18:46
+-- Généré le : dim. 18 sep. 2022 à 20:20
 -- Version du serveur : 8.0.27
 -- Version de PHP : 8.0.13
 
@@ -60,7 +60,6 @@ CREATE TABLE IF NOT EXISTS `objet` (
 --
 
 INSERT INTO `objet` (`id_obj`, `nom`, `type`, `modAtt`, `modDef`, `modEsq`, `modPV`, `image`) VALUES
-(0, 'Rien d\'équipe', 'rien', 0, 0, 0, 0, '/rien.jpg'),
 (1, 'Bouclier en bois', 'Bouclier', 0, 2, NULL, NULL, '/bouclier.png'),
 (10, 'Bouclier de feu', 'Bouclier', NULL, 5, NULL, NULL, '/bouclierFeu.png'),
 (11, 'Claymore', 'Arme', 3, NULL, NULL, NULL, '/claymore.png'),
@@ -103,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `robot` (
 INSERT INTO `robot` (`email`, `pseudo`, `mdp`, `force_rbt`, `defense`, `esquive`, `pv`, `niveau`, `experience`, `argent`, `id_arme`, `id_bouclier`, `id_tenue`) VALUES
 ('Robot1@hotmail.fr', 'Robot1', 'TEST', 10, 10, 10, 10, 1, NULL, NULL, NULL, NULL, NULL),
 ('Robot2@hotmail.fr', 'Robot2', 'TEST', 10, 10, 10, 10, 1, NULL, NULL, NULL, NULL, NULL),
+('toc@hotmail.fr', 'toc', 'toc', 10, 10, 10, 10, 1, NULL, 0, NULL, NULL, NULL),
 ('Valentin@hotmail.fr', 'Valenlou', 'TEST', 200, 10, 10, 10, 1, NULL, 100, 0, 0, 0);
 
 -- --------------------------------------------------------
@@ -124,11 +124,7 @@ CREATE TABLE IF NOT EXISTS `sac` (
 --
 
 INSERT INTO `sac` (`email`, `idObjet`) VALUES
-('Valentin@hotmail.fr', 0),
-('Valentin@hotmail.fr', 1),
-('Valentin@hotmail.fr', 11),
-('Valentin@hotmail.fr', 12),
-('Valentin@hotmail.fr', 14);
+('toc@hotmail.fr', 1);
 
 --
 -- Contraintes pour les tables déchargées

@@ -156,22 +156,22 @@ app.get("/index", (req, res) => {
                                     for (let i in data){
                                         mesTenues.push(new tenues(data[i].id_obj,data[i].nom, data[i].modPV, data[i].image))        
                                     }
-                        getMonBouclierEquipe(req.session.sessionName).then((data) => {
-                            let monBouclier = new boucliers(data[0].id_obj ,data[0].nom, data[0].modDef, data[0].image)
-                        getMonArmeEquipe(req.session.sessionName).then((data) => {
-                            let monArme = new armes(data[0].id_obj ,data[0].nom, data[0].modAtt, data[0].image)
-                        getMaTenueEquipe(req.session.sessionName).then((data) => {
-                        let maTenue = new tenues(data[0].id_obj ,data[0].nom, data[0].modPV, data[0].image)       
+                        // getMonBouclierEquipe(req.session.sessionName).then((data) => {
+                        //     let monBouclier = new boucliers(data[0].id_obj ,data[0].nom, data[0].modDef, data[0].image)
+                        // getMonArmeEquipe(req.session.sessionName).then((data) => {
+                        //     let monArme = new armes(data[0].id_obj ,data[0].nom, data[0].modAtt, data[0].image)
+                        // getMaTenueEquipe(req.session.sessionName).then((data) => {
+                        // let maTenue = new tenues(data[0].id_obj ,data[0].nom, data[0].modPV, data[0].image)       
                         
-                        res.render("index", {maTenue : maTenue ,monArme : monArme ,monBouclier: monBouclier ,mesBoucliers: mesBoucliers, mesTenues : mesTenues,mesArmes : mesArmes, lesBagarreurs: lesBagarreurs, sessionName:req.session.sessionName})
+                        res.render("index", {mesBoucliers: mesBoucliers, mesTenues : mesTenues,mesArmes : mesArmes, lesBagarreurs: lesBagarreurs, sessionName:req.session.sessionName})
                              })
                          })
                      })
                 })
-             })
-         })   
-    });
-});
+             });
+//          })   
+//     });
+// });
 
 
 app.get('/Vendre/:idArme', function(req, res) {
@@ -184,8 +184,9 @@ app.get('/Vendre/:idArme', function(req, res) {
 
   app.get('/combat/:robot', function(req, res) { 
     getMonRobot(req.session.sessionName).then((data) => {
-        let bagarreur1 = new bagarreur(data[0].email,data[0].pseudo, data[0].force_rbt, data[0].defense ,data[0].esquive ,data[0].pv ,data[0].niveau, data[0].argent)
+        let bagarreur1 = new bagarreur(data[0].email, data[0].pseudo, data[0].force_rbt, data[0].defense ,data[0].esquive ,data[0].pv ,data[0].niveau, data[0].argent)
      getMonRobot(req.params.robot).then((data2) => {
+           console.log(data2)
         let bagarreur2 = new bagarreur(data2[0].email, data2[0].pseudo, data2[0].force_rbt, data2[0].defense ,data2[0].esquive ,data2[0].pv ,data2[0].niveau, data2[0].argent)
        let combat = bagarreur1.fight(bagarreur2)
          res.render("combat",  {bagarreur1:bagarreur1, bagarreur2:bagarreur2 ,sessionName:req.session.sessionName, combat: combat})
